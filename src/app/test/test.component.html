@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="container">
+<p>Hello sahbi {{ name }}</p>
+<img [src]="photourl" alt="Photo Nadhem" class="sr" width="100px">
+
+<button (click)="hello(name)" class="btn btn-info">hello</button>
+<hr>
+<ul *ngFor="let person1 of person">
+    <li>{{ person1 }}</li>
+   
+</ul>
+<div *ngIf="payobject.length==0" class="alert alert-warning">Ce tableau est vide</div>
+<table class="table">
+<thead>
+    <tr>
+<th>id</th>
+<th>Title</th>
+<th>Name</th>
+<th>#</th>
+</tr>
+</thead>
+<tbody>
+      <tr *ngFor="let personne of payobject">
+         <th>{{ personne.id }}</th>  
+         <td>{{ personne.Title }}</td> 
+         <td>{{ personne.name }}</td>  
+        <td>
+            <button class="btn btn-info">Détail </button>
+            <button class="btn btn-warning mx-2">Modifier </button>
+            <button class="btn btn-danger" (click)="supprimer(personne)">Supprimer </button>
+
+        </td>
+    </tr> 
+</tbody>
+</table>
+<ul *ngFor="let user of userList">
+    <li>  {{ user.firstName }}</li>
+   
+</ul>
+</div>
+<app-footer></app-footer>

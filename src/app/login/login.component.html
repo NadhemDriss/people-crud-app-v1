@@ -1,22 +1,28 @@
 <app-navbar></app-navbar>
-<div class='container my-5'>
+<div class="container my-5">
 
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <small *ngIf="email.errors.required" class="text-danger">Email is required<br></small>
-          <small *ngIf="email.errors.email" class="text-danger">Invalid Email<br></small>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-group">
+        <div class="form-group col-6">
+            <label for="exampleInputEmail1">E-mail :</label>
+            <input type="text" name="email" id="exampleInputEmail1" formControlName="email" class="form-control">
+            <div *ngIf="email.touched && email.invalid">
+              <small *ngIf="email.errors.required" class="text-danger">E-mail is required<br></small>
+              <small *ngIf="email.errors.email" class="text-danger">Invalid E-mail<br></small>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+
+        <div class="form-group col-6">
+            <label for="exampleInputPassword1">Password :</label>
+            <input type="password" name="password" id="exampleInputPassword1" formControlName="password"  class="form-control">
+            <div *ngIf="password.touched && password.invalid">
+              <small *ngIf="password.errors.required" class="text-danger">password is required<br></small>
+              <small *ngIf="password.errors.minlength" class="text-danger">password must contain 8 characters at least</small>
+          </div>
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">login</button>
-      </form>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">login</button>
+  </form>
 </div>
 <app-footer></app-footer>

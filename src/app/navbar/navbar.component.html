@@ -1,15 +1,17 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" [routerLink]="['/']"> <img [src]="" alt="Nadhem logo" width="100px"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-light bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    </button>
+    <img [src]="photourl" alt="Photo Nadhem" class="sr" width="100px">
+    
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <form class="form-inline my-2 my-lg-0 ml-auto">
-          <button *ngIf="!isLoggedIn" class="btn btn-info my-2 my-sm-0" [routerLink]="['/login']">Login</button>
-          <button *ngIf="!isLoggedIn" class="btn btn-primary mx-3 my-2 my-sm-0" [routerLink]="['/register']">Register</button>
-          <button *ngIf="!isLoggedIn" class="btn btn-primary mx-3 my-2 my-sm-0" [routerLink]="['/people-list']">Liste people</button>
-          <button *ngIf="isLoggedIn" class="btn btn-danger my-2 my-sm-0" (click)="logout()">Logout</button>
+        <button class="btn btn-info my-2 my-sm-0" [routerLink]="['/login']">Login</button>
+        <button class="btn btn-primary mx-3 my-2 my-sm-0" [routerLink]="['/register']">Register</button>
+        <button class="btn btn-primary mx-1 my-2 my-sm-0" [routerLink]="['/people-list']">List people</button>
+     <!--   <button class="btn btn-outline-success my-2 my-sm-0" [routerLink="['/Login']">Login</button>
+        <button class="btn btn-outline-success my-2 my-sm-0">Register</button>
+        <button class="btn btn-outline-success my-2 my-sm-0">List people</button>-->
       </form>
-  </div>
-</nav>
+    </div>
+    </nav>

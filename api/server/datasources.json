@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "nadhemdb":{
+  "host":"localhost",
+  "port":3306,
+  "url":"",
+  "password":"",
+  "user":"root",
+  "connector":"mysql"
+}
+}
